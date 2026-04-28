@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
           source: "./"
-          target: "/home/sfl5-docker/htdocs/sfl5d.ncgrp.xyz/DevOps4"
+          target: "/home/s2276375-node/htdocs/s2276375n.ncgrp.xyz"
           strip_components: 1
  
       - name: 🐳 Build & restart Docker container on server
@@ -35,9 +35,9 @@ jobs:
           script: |
             set -e
  
-            APP_DIR="/home/sfl5-docker/htdocs/sfl5d.ncgrp.xyz/DevOps4"
-            CONTAINER_NAME="devops31-app"
-            IMAGE_NAME="devops31-app:latest"
+            APP_DIR="/home/s2276375-node/htdocs/s2276375n.ncgrp.xyz"
+            CONTAINER_NAME="empmanageapp"
+            IMAGE_NAME="empmanageapp:latest"
  
             cd "$APP_DIR"
  
@@ -63,5 +63,5 @@ jobs:
             docker run -d \
               --name "$CONTAINER_NAME" \
               --restart unless-stopped \
-              -p 3044:80 \
+              -p 3045:80 \
               "$IMAGE_NAME"
